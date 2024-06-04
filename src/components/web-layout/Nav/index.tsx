@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 const NavLayout = () => {
@@ -251,7 +252,7 @@ const NavLayout = () => {
           {/* / Style Switcher*/}
           {/* navbar button: Start */}
           <li>
-            <a href="../vertical-menu-template/auth-login-cover.html" className="btn btn-primary" target="_blank"><span className="tf-icons ti ti-login scaleX-n1-rtl me-md-1" /><span className="d-none d-md-block">Login/Register</span></a>
+            <Link href="/auth" className="btn btn-primary" target="_blank"><span className="tf-icons ti ti-login scaleX-n1-rtl me-md-1" /><span className="d-none d-md-block">Login</span></Link>
           </li>
           {/* navbar button: End */}
         </ul>
