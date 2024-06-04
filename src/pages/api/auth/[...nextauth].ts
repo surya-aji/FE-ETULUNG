@@ -1,8 +1,6 @@
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcrypt";
 
-import { compare } from "bcrypt";
 import NextAuth from "next-auth/next";
 
 const authOptions: NextAuthOptions = {
@@ -10,7 +8,7 @@ const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: "asasajkjasas",
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
       name: "Credentials",

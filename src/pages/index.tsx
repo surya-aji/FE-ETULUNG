@@ -1,15 +1,28 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import WebLayout from "@/components/web-layout";
+import WebLayout from "@/components/web-layout"
+import DashboardView from "@/components/views/web/dashboard";
+import ProjectServices from "@/services/projects";
+import { useState, useEffect } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const Home = () => {
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+  
 
-export default function Home() {
+
+    const getAllProjects = async () =>{
+      const response = await ProjectServices.getAllProjects();
+      const result = await response.json();
+      setProjects(result.data);
+    }
+    getAllProjects()
+    
+  },[]);
+  console.log(projects)
   return (
-   <>
-    <WebLayout />
-   </>
-  );
+    <WebLayout>
+      <DashboardView projects = {projects}/>
+    </WebLayout>
+    
+  )
 }
+export default Home;

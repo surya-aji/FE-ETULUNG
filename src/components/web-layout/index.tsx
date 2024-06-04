@@ -1,4 +1,4 @@
-import { ProjectServices } from "@/services/projects";
+
 import ScriptLayout from "./Script";
 import FooterLayout from "./Footer";
 import HeadLayout from "./Head";

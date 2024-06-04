@@ -9,7 +9,7 @@ const AuthPage = () => {
 const [isLoading, setIsLoading] = useState(false);
 const [error, setError] = useState("")
 const { push, query } = useRouter();
-const callbackUrl:any = '/admin/dashboard';
+const callbackUrl:any = '/admin/';
 
 const handlerSubmit = async (event:any) => {
   event.preventDefault();
